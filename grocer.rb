@@ -40,7 +40,7 @@ end
 def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   total = 0 
-  consolidated_cart.each_pair{|item|
+  consolidated_cart.each_pair{|key, value|
     puts item
     total += item[:price]
   }
