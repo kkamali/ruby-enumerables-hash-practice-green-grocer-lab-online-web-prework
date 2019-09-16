@@ -28,7 +28,11 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  cart.each_pair{|key, value|}
+  cart.each_pair{|key, value|
+    if cart[key][:clearance]
+      puts "YES"
+    end
+  }
 end
 
 def checkout(cart, coupons)
