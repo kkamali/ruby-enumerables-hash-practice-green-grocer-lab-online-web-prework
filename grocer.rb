@@ -39,7 +39,7 @@ end
 
 def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
-  puts cart
-  puts "***"
-  puts consolidated_cart
+  consolidated_cart.map{|item|
+    puts item
+  }
 end
