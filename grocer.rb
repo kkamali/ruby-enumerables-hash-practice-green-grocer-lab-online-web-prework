@@ -31,7 +31,9 @@ def apply_clearance(cart)
   cart.each_pair{|key, value|
     if cart[key][:clearance]
       old_price = cart[key][:price]
+      puts old_price
       new_price = cart[key][:price] - (cart[key][:price] * 0.2).round
+      puts new_price
       cart[key][:price] = new_price
     end
   }
