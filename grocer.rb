@@ -41,7 +41,7 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   total = 0 
   consolidated_cart.map{|item|
-    consolidated_cart[item]
+    puts consolidated_cart[item]
     total += item[:price]
   }
   total
