@@ -15,13 +15,16 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each{|coupon|
-    if cart.has_key?(coupon[:item])
-      item_w_coupon = coupon[:item] + " W/COUPON"
-      cart[item_w_coupon] = {price: coupon[:cost]/coupon[:num], count: coupon[:num], clearance: cart[:item][:clearance]} 
-      #{price: coupon[:cost] / coupon[:num], count: coupon[:num], clearance: cart[:item][:clearance]}
+    item_w_coupon = coupon[:item] + " W/COUPON"
+    if cart.has_key?(item_w_coupon)
+      cart[item_w_coupon][:count] += coupon[:num]
+      cart[coupon[:item]][:count] -= coupon[:num]
+    elsif cart.has_key?(coupon[:item])
+      cart[item_w_coupon] = {price: coupon[:cost]/coupon[:num], count: coupon[:num], clearance: cart[coupon[:item]][:clearance]} 
+      cart[coupon[:item]][:count] -= coupon[:num]
     end
   }
-  puts cart
+  cart
 end
 
 def apply_clearance(cart)
