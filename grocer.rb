@@ -43,4 +43,5 @@ def checkout(cart, coupons)
   consolidated_cart.map{|item|
     total += item[:price]
   }
+  total
 end
