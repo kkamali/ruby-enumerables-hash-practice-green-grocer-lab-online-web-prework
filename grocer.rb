@@ -41,5 +41,5 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   puts cart
   puts "***"
-  puts consolidate_cart
+  puts consolidated_cart
 end
