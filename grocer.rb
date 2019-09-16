@@ -30,7 +30,7 @@ end
 def apply_clearance(cart)
   cart.each_pair{|key, value|
     if cart[key][:clearance]
-      puts "YES"
+      new_price = cart[key][:price] - ()
     end
   }
 end
